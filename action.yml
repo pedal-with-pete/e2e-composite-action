@@ -4,11 +4,11 @@ description: |
   Guard against regressions due to dependency updates 
   on Pedal with Pete websites
 
-inputs:
-  website_url:
-    description: URL for the web property to test
-    default: https://pedalwithpete.org
-    required: true
+# inputs:
+#   website_url:
+#     description: URL for the web property to test
+#     default: https://pedalwithpete.org
+#     required: true
 outputs:
   pnpm_store_path:
     description: PNPM store path
@@ -52,12 +52,12 @@ runs:
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
 
-    # and run all Cypress tests
-    - name: E2E on Chrome
-      # Cypress github action: https://github.com/cypress-io/github-action
-      uses: cypress-io/github-action@v4
-      with:
-        browser: chrome
-        start: pnpm test
-      env:
-        WEBSITE_URL: ${{ inputs.website_url }}
+    # # and run all Cypress tests
+    # - name: E2E on Chrome
+    #   # Cypress github action: https://github.com/cypress-io/github-action
+    #   uses: cypress-io/github-action@v4
+    #   with:
+    #     browser: chrome
+    #     start: pnpm test
+    #   env:
+    #     WEBSITE_URL: ${{ inputs.website_url }}
