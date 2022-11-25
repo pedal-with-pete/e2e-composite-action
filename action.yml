@@ -39,6 +39,11 @@ runs:
       run: |
         echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
 
+    - name: Check PNPM store path
+      shell: bash
+      run: |
+        echo "STORE_PATH=${{ steps.pnpm-cache.outputs.STORE_PATH }}"
+
     - uses: actions/cache@v3
       name: Setup pnpm cache
       with:
