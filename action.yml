@@ -1,8 +1,7 @@
 name: Pedal with Pete E2E Setup
 
 description: |
-  Guard against regressions due to dependency updates 
-  on Pedal with Pete websites
+  Setup dependencies for Pedal with Pete E2E testing projects
 
 # inputs:
 #   website_url:
