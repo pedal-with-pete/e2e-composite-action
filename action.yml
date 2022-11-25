@@ -1,13 +1,10 @@
+# For details on getting started with Github composite actions, 
+#   check out  <https://docs.github.com/en/actions/creating-actions/creating-a-composite-action>
 name: Pedal with Pete E2E Setup
 
 description: |
   Setup dependencies for Pedal with Pete E2E testing projects
 
-# inputs:
-#   website_url:
-#     description: URL for the web property to test
-#     default: https://pedalwithpete.org
-#     required: true
 outputs:
   pnpm_store_path:
     description: PNPM store path
@@ -50,13 +47,3 @@ runs:
         key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
-
-    # # and run all Cypress tests
-    # - name: E2E on Chrome
-    #   # Cypress github action: https://github.com/cypress-io/github-action
-    #   uses: cypress-io/github-action@v4
-    #   with:
-    #     browser: chrome
-    #     start: pnpm test
-    #   env:
-    #     WEBSITE_URL: ${{ inputs.website_url }}
