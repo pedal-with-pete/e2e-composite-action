@@ -59,3 +59,5 @@ runs:
       with:
         browser: chrome
         start: pnpm test
+      env:
+        WEBSITE_URL: ${{ inputs.website_url }}
