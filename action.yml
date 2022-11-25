@@ -1,4 +1,4 @@
-name: Cypress E2E Tests
+name: Pedal with Pete E2E Setup
 
 description: |
   Guard against regressions due to dependency updates 
