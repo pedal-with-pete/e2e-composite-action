@@ -1,4 +1,4 @@
-# For details on getting started with Github composite actions, 
+# For details on getting started with Github composite actions,
 #   check out  <https://docs.github.com/en/actions/creating-actions/creating-a-composite-action>
 name: Pedal with Pete E2E Setup
 
@@ -43,7 +43,9 @@ runs:
     - uses: actions/cache@v3
       name: Setup pnpm cache
       with:
-        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+        path: |
+          ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          /home/runner/.cache/Cypress
         key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
